@@ -164,6 +164,21 @@
             <h2 class="visually-hidden">Как до нас добраться</h2>
             <img src="img/map.jpg"  alt=" Адрес: г. Санкт-Петербург, Б. Конешенная, 19/8">
             <button type="button" class="modal-close"><span class="visually-hidden">Закрыть</span></button>
-        </section>    
+        </section>
+        <script>
+            var loginLink = document.querySelector(".login-link");
+            var popup = document.querySelector(".modal-login");
+            var close = document.querySelector(".modal-close");
+
+            loginLink.addEventListener("click", function(evt) {
+                evt.preventDefault();
+                popup.classList.add("modal-show");
+            });
+
+            close.addEventListener("click", function(evt) {
+                evt.preventDefault();
+                popup.classList.remove("modal-show");
+            });
+        </script>    
     </body>
 </html>
