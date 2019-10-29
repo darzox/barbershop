@@ -171,13 +171,18 @@
             var close = document.querySelector(".modal-close");
             var form = popup.querySelector("form");
             var login = popup.querySelector("[name=login]");
-            var passwword = popup.querySelector("[name=password]");
+            var password = popup.querySelector("[name=password]");
+            var storage = localStorage.getItem("login");
 
             loginLink.addEventListener("click", function(evt) {
                 evt.preventDefault();
                 popup.classList.add("modal-show");
-
                 login.focus();
+
+                if (storage) {
+                    login.value = storage;
+                };
+
             });
 
             close.addEventListener("click", function(evt) {
@@ -188,6 +193,9 @@
             form.addEventListener("submit", function(evt) {
                 if (!login.value || !password.value) {
                     evt.preventDefault();
+                    console.log("Нужно ввести логин")
+                } else {
+                    localStorage.setItem("login", login.value);
                 }
                 
             });
