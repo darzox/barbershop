@@ -1243,11 +1243,15 @@ input[type="radio"].visually-hidden {
     box-sizing: border-box;
     width: 780px;
     height: 561px;
+    margin-top: -287px;
     margin-left: -390px;
 
     border: 7px solid #ffffff;
 }
 
+iframe {
+    border: none;
+}
 
 /* ------------ Animation Start ------------ */
 
